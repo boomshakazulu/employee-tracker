@@ -26,7 +26,8 @@
 ## Usage
 
   To use the app first setup your database by sourcing the .sql files located in the database folder or input your own DB in the .env file(not provided). Run "node index.js" in the terminal and select the prompts as you wish using the arrow keys
-  ![View it in action](https://github.com/boomshakazulu/employee-tracker/assets/120769113/61c80f69-8942-481b-b4a8-d340f70b3c6a)
+[View it in action here](https://github.com/boomshakazulu/employee-tracker/assets/120769113/6e01a849-3db7-4d43-8f1c-e023b8a1d0fe)
+
 
 
 ---
