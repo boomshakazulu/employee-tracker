@@ -1,22 +1,23 @@
 const inquirer = require("inquirer");
 const query = require('./lib/query');
 const helper = require('./lib/helper');
+const { printTable } = require('console-table-printer');
 
 const viewEmps = async () => {
-    const emps = await query.getEmps()
-    console.log(emps);
+    const emps = await query.getEmpRaw()
+    printTable(emps[0]);
     init();
 }
 
 const viewRoles = async () => {
     const roles= await query.getRoles()
-    console.log(roles);
+    printTable(roles[0]);
     init();
 }
 
 const viewDepts = async () => {
     const depts = await query.getDepts()
-    console.log(depts);
+    printTable(depts[0]);
     init();
 }
 
