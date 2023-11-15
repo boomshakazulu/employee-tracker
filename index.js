@@ -3,24 +3,28 @@ const query = require('./lib/query');
 const helper = require('./lib/helper');
 const { printTable } = require('console-table-printer');
 
+//function for viewing employees
 const viewEmps = async () => {
-    const emps = await query.getEmpRaw()
+    const emps = await query.getEmps()
     printTable(emps[0]);
     init();
 }
 
+//function for viewing Roles
 const viewRoles = async () => {
     const roles= await query.getRoles()
     printTable(roles[0]);
     init();
 }
 
+//function for viewing departments
 const viewDepts = async () => {
     const depts = await query.getDepts()
     printTable(depts[0]);
     init();
 }
 
+//function for updating roles
 const updateEmpRole = async () => {
     const roleArr = await helper.roleChoices();
     const empArr = await helper.empChoices();
@@ -44,6 +48,7 @@ const updateEmpRole = async () => {
     init();    
 }
 
+//creates new roles
 const newRole = async () => {
     const choicesArr = await helper.deptChoices();  
     const role = await inquirer.prompt([
@@ -84,7 +89,7 @@ const newRole = async () => {
     await query.addRole(role); 
     init();     
 }
-
+//creates new employee
 const newEmp = async () => {
     const roleArr = await helper.roleChoices(); 
     const mgmtArr = await helper.mgmtChoices();  
@@ -133,7 +138,7 @@ const newEmp = async () => {
     await query.addEmp(emp);  
     init();     
 }
-
+//creates new department
 const newDept = async () => {  
     const deptartment = await inquirer.prompt([
     {
